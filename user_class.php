@@ -33,7 +33,7 @@ $addressTable = "CREATE TABLE Address (
 // `` are column names
 // '' are values
 
-function fill_user_list_variables($args,$group=null, $order=null) {
+class fill_user_list_variables($args,$group=null, $order=null) {
 	extract($args);  // What does extract do?
                      //Extracts keys from an associative array and stores them as local variables so you can use their values
 
@@ -92,11 +92,11 @@ function fill_user_list_variables($args,$group=null, $order=null) {
   // return an array of associtive arrays of all users.
 }
 
-
-function add_user($args){
+class add_user($args){
   extract($args);
 	// Insert a row into the user table.  Data -> username, Full Name, email, group id
-  return json_ecncode(array('error'=>0, 'msg'=>''));
+    $insert = "INSERT INTO User (`username`, `name`, `email`, `group_id`), VALUES ('rickyBobby123', 'Ricky Bobby', 'rickyBobby@gmail.com' '1');)";
+  return json_ecncode(array('error'=>0, 'msg'=>$insert));
 }
 
  ?>
